@@ -1,6 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import PopUpRegister from '../components/popup/PopupRegister.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
+import PopUpRegister from '../components/popup/PopupRegister.vue';
+import PopUpLogin from '../components/popup/PopupLogin.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,14 +9,19 @@ const router = createRouter({
     {
       path: '/',
       name: 'main',
-      component: HomeView
+      component: HomeView,
     },
     {
-      path: '/register',
-      name: 'regster',
-      component: PopUpRegister
-    }
-  ]
-})
+      path: '/popup/register',
+      name: 'register',
+      component: PopUpRegister,
+    },
+    {
+      path: '/popup/login',
+      name: 'login',
+      component: PopUpLogin,
+    },
+  ],
+});
 
-export default router
+export default router;
